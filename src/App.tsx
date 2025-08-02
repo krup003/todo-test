@@ -10,7 +10,8 @@ function App() {
   const [totalTask, setTotalTask] = useState<TaskDetails[]>([]);
   const [taskName, setTaskName] = useState<string>("");
 
-  const handleAddTask = () => {
+  const handleAddTask = (e: React.FormEvent) => {
+    e.preventDefault(); // Prevent page reload
     setTotalTask([...totalTask, { taskName: taskName }]);
     setTaskName("");
   };
